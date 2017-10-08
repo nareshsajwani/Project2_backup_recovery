@@ -1,0 +1,8 @@
+Backups and Recovery
+Premise
+"I thought I was on my development machine and I’ve accidentally dropped a collection in production."The backup system captured its most recent backup last night,
+ which is in the /home/ec2-user/scripts/dump directory, but the system subsequently continued to accumulate new data through the night. You need to restore your 
+ data to the point in time just before the you dropped the collection.The collection is test.users and the total number of documents prior to the drop was 20,000.
+ 
+ ans::
+ mongorestore --username user --password pass  --collection users --db test /home/ec2-user/scripts/dump --oplogreplay
